@@ -1,0 +1,15 @@
+<div>
+    <ng-form name="form">
+        
+        <div ng-repeat="input in $ctrl.data.inputs">
+            <label for="input.placeholder">{{input.label}}</label>
+            <input ng-if="input.type != 'select'" type="{{input.type}}" id="{{input.placeholder}}", name="nombre" ng-pattern="input.reg_exp" placeholder="{{input.placeholder}}" ng-required="input.required">
+            <select ng-if="input.type == 'select'" type="input.type" id="input.placeholder", name="input.placeholder" ng-required="input.required">
+                <option ng-repeat="opt in input.options" value="opt.value">{{opt.label}}</option>
+            </select>
+            <span ng-show="form.input.placeholder.$error.pattern" >El valor ingresado es erroneno</span>    
+        </div>
+        <button ng-repeat="button in $ctrl.data.buttons" (click)="{{button.callback}}">{{button.label}}</button>
+        
+    </form>
+</div>
