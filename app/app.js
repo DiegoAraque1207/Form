@@ -58,8 +58,7 @@ controller('MainCtrl', function MainCtrl(){
             "label": "Continuar",
             "callback":"callbackFunction(data)"
         }
-    },
-    "test": "holiwia :3"
+    }
 }
 }
 );
